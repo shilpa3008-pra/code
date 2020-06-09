@@ -1,0 +1,14 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+@Injectable({
+  providedIn: 'root'
+})
+export class ApixuService {
+
+  constructor(private http: HttpClient) { }
+ 
+  getWeather(location){
+      return this.http.get(
+          'https://api.apixu.com/v1/current.json?key=0db350ecb13710ed271454900c2362e3&q=' + location
+      );
+}}
